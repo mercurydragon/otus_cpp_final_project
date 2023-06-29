@@ -15,7 +15,7 @@ add_definitions(-DPYTHON_LIBRARY="${PYTHON_LIBRARY}")
 # Добавление исходных файлов
 set(SOURCES
         main.cpp
-        )
+        fixew_priority_queue.cpp fixew_priority_queue.h)
 
 # Добавление исполняемого файла
 add_executable(bm25_util ${SOURCES})
