@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.12)
-project(BM25Util)
+set(PATCH_VERSION "1" CACHE INTERNAL "Patch version")
+set(PROJECT_VESRION 0.0.${PATCH_VERSION})
+
+project(allocator VERSION ${PROJECT_VESRION})
 
 set(CMAKE_CXX_STANDARD 11)
 
@@ -26,17 +29,17 @@ set_target_properties(bm25_util PROPERTIES
         )
 
 set (CMAKE_CXX_FLAGS "-lstdc++fs")
-# Линковка с библиотеками Python и другими необходимыми библиотеками
-target_link_libraries(bm25_util ${PYTHON_LIBRARIES})
 
-# Укажите путь к библиотекам CppJieba и nlohmann/json
-# set(CPPJIEBA_INCLUDE_DIR "/путь/к/директории/с/файлами/CppJieba")
-# set(JSON_INCLUDE_DIR "/путь/к/директории/с/файлами/json")
 
-# Добавление пути к заголовочным файлам CppJieba и nlohmann/json, если необходимо
-# include_directories(${CPPJIEBA_INCLUDE_DIR})
-# include_directories(${JSON_INCLUDE_DIR})
 
-# Линковка с CppJieba и nlohmann/json, если необходимо
-# target_link_libraries(bm25_util ${CPPJIEBA_LIBRARY})
-# target_link_libraries(bm25_util ${JSON_LIBRARY})
+install(TARGETS bm25_util RUNTIME DESTINATION bin)
+
+set(CPACK_GENERATOR DEB)
+
+set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
+set(CPACK_PACKAGE_VERSION_MINOR "${PROJECT_VERSION_MINOR}")
+set(CPACK_PACKAGE_VERSION_PATCH "${PROJECT_VERSION_PATCH}")
+
+set(CPACK_PACKAGE_CONTACT puzanova679@gmail.com)
+
+include(CPack)
