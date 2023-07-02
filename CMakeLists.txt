@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.12)
 set(PATCH_VERSION "1" CACHE INTERNAL "Patch version")
 set(PROJECT_VESRION 0.0.${PATCH_VERSION})
 
-project(allocator VERSION ${PROJECT_VESRION})
+project(bm25_util VERSION ${PROJECT_VESRION})
 
 set(CMAKE_CXX_STANDARD 11)
 
