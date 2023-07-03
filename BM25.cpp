@@ -84,10 +84,10 @@ vector<string> BM25::tokenize(const string &text) {
 
     for (const auto &token: tokens) {
         // сверх простая попытка в лемматизацию - если слово длиное отрезаем последние 2 буквы - предполагаем что это окончание
-        auto new_token = token;
-        if (token.size() > 4)
-            new_token = token.substr(0, token.size()-2);
-        words.push_back(new_token);
+//        auto new_token = token;
+//        if (token.size() > 4)
+//            new_token = token.substr(0, token.size()-2);
+        words.push_back(token);
     }
 
     return words;

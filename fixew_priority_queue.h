@@ -52,12 +52,7 @@ public:
         while (!reverseStack.empty()) {
             auto item = reverseStack.top();
             reverseStack.pop();
-            cout << "Url: " << item.first << " with score " << item.second << endl;
-        }
-        while (!empty()) {
-            auto item = top();
-            cout << item.first << " - " << item.second << endl;
-            pop();
+            cout << "Url: '" << item.first << "' with score " << item.second << endl;
         }
     }
 

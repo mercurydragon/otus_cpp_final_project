@@ -89,7 +89,7 @@ tuple<string, double> IndexIO::splitDocString(const string &input) {
     double second;
 
     // Find the position of the dash '-'
-    size_t dashPos = input.find('-');
+    size_t dashPos = input.find_last_of('-');
     if (dashPos != string::npos) {
         // Extract the string part before the dash
         first = input.substr(0, dashPos);
